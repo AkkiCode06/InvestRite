@@ -1,0 +1,15 @@
+{
+  "name": "investrite",
+  "version": "1.0.0",
+  "private": true,
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "dev":   "concurrently -n \"API,UI\" -c \"magenta,cyan\" \"node backend/server.js\" \"npm run dev --prefix frontend\"",
+    "dev:mobile": "concurrently -n \"API,UI\" -c \"magenta,cyan\" \"node backend/server.js\" \"npm run dev --prefix frontend -- --host\"",
+    "build": "npm run build --prefix frontend",
+    "start": "NODE_ENV=production node backend/server.js"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.0"
+  }
+}
